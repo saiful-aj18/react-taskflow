@@ -59,6 +59,9 @@ const completedTasks = tasksList.filter(
 ).length;
 
 const pendingTasks = totalTasks - completedTasks;
+const filteredTasks = tasksList.filter((task) =>
+  task.title.toLowerCase().includes(search.toLowerCase())
+);
   return (
     <main className="flex-1 p-4 md:p-6">
       {/* Welcome */}
@@ -100,13 +103,21 @@ const pendingTasks = totalTasks - completedTasks;
           <h2 className="text-xl font-bold text-gray-900">
             My Tasks
           </h2>
+          <input
+          className="w-full rounded-lg border border-gray-300 px-4 py-2 text-sm text-gray-900 focus:border-blue-500 focus:ring focus:ring-blue-200 sm:w-auto"
+          type="text"
+          placeholder="Search tasks..."
+          value={search}
+          onChange={(e) => setSearch(e.target.value)}/>
           <button className="rounded-lg bg-blue-600 hover:bg-blue-700 px-4 py-2 text-sm font-semibold text-white transition">
             + Add Task
           </button>
+          
+
         </div>
         <div className="overflow-hidden rounded-xl border bg-white shadow-sm">
           {
-            tasksList.map(task =>
+            filteredTasks.map(task =>
               <TaskItem
                 key={task.id}
                 task={task}
