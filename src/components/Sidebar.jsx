@@ -50,7 +50,7 @@ const Sidebar = ({ isOpen, onClose }) => {
       {/* Desktop Sidebar */}
       <aside className="hidden md:block w-64 border-r bg-slate-950 p-4">
         <div className="flex flex-col py-4">
-          <h2 className="mb-8 text-2xl font-bold text-emerald-500 md:hidden">
+          <h2 className="mb-8 text-2xl font-bold bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent md:hidden">
             TaskFlow
           </h2>
           {/* Menu Items */}
@@ -59,7 +59,7 @@ const Sidebar = ({ isOpen, onClose }) => {
         {/* Settings */}
         <a
           href="#"
-          className="rounded-lg px-4 text-sm font-medium text-cyan-600 hover:bg-cyan-50 py-3"
+          className="rounded-lg px-4 text-sm font-medium text-cyan-600 hover:text-cyan-700 py-3"
         >
           Settings
         </a>
@@ -74,12 +74,12 @@ const Sidebar = ({ isOpen, onClose }) => {
               />
               <aside className="relative h-full w-64 bg-slate-900 shadow-2xl">
                 <div className="flex items-center justify-between p-4">
-                  <h2 className="text-2xl font-bold text-emerald-500 md:hidden">
+                  <h2 className="text-2xl font-bold bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent md:hidden">
                     TaskFlow
                   </h2>
                   <button
                     onClick={onClose}
-                    className="text-xl text-white bg-red-600 px-3 py-1 rounded-lg"
+                    className="text-xl text-white bg-red-600 hover:bg-red-400 px-3 py-1 rounded-lg"
                   >
                     x
                   </button>
@@ -90,7 +90,7 @@ const Sidebar = ({ isOpen, onClose }) => {
                   />
                    <a
                     href="#"
-                    className="rounded-lg px-4 y-3 text-sm font-meduum text-cyan-600 hover:bg-cyan-50"
+                    className="rounded-lg px-4 py-3 text-sm font-medium text-cyan-600 hover:text-cyan-700"
                   >
                     Settings
                   </a> 
