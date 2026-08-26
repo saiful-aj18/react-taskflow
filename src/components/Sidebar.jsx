@@ -32,8 +32,8 @@ const MenuItems = ({ onMenuClick }) => {
             onClick={onMenuClick}
             className={
               `rounded-lg px-4 py-3 text-sm ${item.active
-              ? 'bg-blue-50 text-blue-600 font-semibold'
-              : 'font-medium text-gray-600 hover:bg-gray-100'}`
+              ? 'bg-gray-800 text-cyan-600 font-semibold'
+              : 'font-medium text-gray-300 hover:bg-gray-800'}`
             }
           >
             {item.label}
@@ -48,9 +48,9 @@ const Sidebar = ({ isOpen, onClose }) => {
   return (
     <>
       {/* Desktop Sidebar */}
-      <aside className="hidden md:block w-64 border-r bg-white">
+      <aside className="hidden md:block w-64 border-r bg-slate-950 p-4">
         <div className="flex flex-col py-4">
-          <h2 className="mb-8 text-2xl font-bold text-gray-900 md:hidden">
+          <h2 className="mb-8 text-2xl font-bold text-emerald-500 md:hidden">
             TaskFlow
           </h2>
           {/* Menu Items */}
@@ -59,23 +59,22 @@ const Sidebar = ({ isOpen, onClose }) => {
         {/* Settings */}
         <a
           href="#"
-          className="rounded-lg px-4 text-sm font-medium text-gray-600 hover:bg-gray-100"
+          className="rounded-lg px-4 text-sm font-medium text-cyan-600 hover:bg-cyan-50 py-3"
         >
           Settings
         </a>
       </aside>
-      {/* Mobile Sidebar */}
+
       {
         isOpen && (
             <div className="fixed inset-0 z-50 md:hidden">
-              {/* OverLay */}
               <div
                 onClick={onClose}
-                className="absolute inset-0 bg-black/40"
+                className="absolute inset-0 bg-slate-900/40"
               />
-              <aside className="relative h-full w-64 bg-white shadow-2xl">
+              <aside className="relative h-full w-64 bg-slate-900 shadow-2xl">
                 <div className="flex items-center justify-between p-4">
-                  <h2 className="text-2xl font-bold text-gray-900 md:hidden">
+                  <h2 className="text-2xl font-bold text-emerald-500 md:hidden">
                     TaskFlow
                   </h2>
                   <button
@@ -86,17 +85,16 @@ const Sidebar = ({ isOpen, onClose }) => {
                   </button>
                 </div>
                 <div>
-                  {/* Menu Items */}
                   <MenuItems
                     onMenuClick={onClose}
                   />
-                  {/* Settings */}
-                  {/* <a
+                   <a
                     href="#"
-                    className="rounded-lg px-4 y-3 text-sm font-meduum text-gray-600 hover:bg-gray-100"
+                    className="rounded-lg px-4 y-3 text-sm font-meduum text-cyan-600 hover:bg-cyan-50"
                   >
                     Settings
-                  </a> */}
+                  </a> 
+                  
                 </div>
               </aside>
             </div>

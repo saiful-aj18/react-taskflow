@@ -1,11 +1,11 @@
-const TaskItem = ({ task, onToggle }) => {
+const TaskItem = ({ task, onToggle, onDelete }) => {
   const { id, title, description, priority, completed } = task;
 
   return (
-    <div className="flex items-center gap-4 border-b p-4 last:border-b-0">
+    <div className="flex items-center gap-4 border-b border-slate-800 p-4 last:border-b-0">
       <div
         onClick={() => onToggle(id)}
-        className={`flex h-5 w-5 shrink-0 items-center justify-center rounded border ${completed ? 'border-green-500 bg-green-500 text-xs text-white' : 'border-gray-300'}`}
+        className={`flex h-5 w-5 shrink-0 items-center justify-center rounded border ${completed ? 'border-green-500 bg-green-500 text-xs text-white' : 'border-slate-600'}`}
       >
         {completed && '✓'}
       </div>
@@ -14,7 +14,7 @@ const TaskItem = ({ task, onToggle }) => {
           className={`truncate text-sm font-semibold ${
             completed
             ? 'text-gray-400 line-through'
-            : 'text-gray-800'
+            : 'text-slate-200'
           }`}
         >
           {title}
@@ -22,7 +22,7 @@ const TaskItem = ({ task, onToggle }) => {
         <p className={`mt-1 truncate text-xl ${
             completed
             ? 'text-gray-400 line-through'
-            : 'text-gray-800'}`}>
+            : 'text-slate-400'}`}>
           {description}
         </p>
       </div>
@@ -37,6 +37,11 @@ const TaskItem = ({ task, onToggle }) => {
       >
         {priority}
       </span>
+      <button
+      onClick={() => onDelete(id)}
+      className="text-sm text-red-500 hover:text-red-700">
+         Delete
+      </button>
     </div>
   )
 }
