@@ -57,6 +57,38 @@ const [newTask, setNewTask] = useState({
   category: "Development",
   priority: "Medium",
 });
+const addTask = (e) => {
+  e.preventDefault();
+  if (!newTask.title.trim() || !newTask.description.trim()) {
+  return;
+} 
+  
+const task = {
+  id: crypto.randomUUID(),
+  title: newTask.title,
+  description: newTask.description,
+  category: newTask.category,
+  priority: newTask.priority,
+  completed: false,
+};
+
+// Add new task
+    setTasksList((prevTasks) => [
+      ...prevTasks,
+      task,
+    ]);
+
+    // Reset form
+    setNewTask({
+      title: "",
+      description: "",
+      category: "Development",
+      priority: "Medium",
+    });
+
+    setShowModal(false);
+ 
+};
 const toggleTask = (id) => {
     setTasksList((prevTasks) =>
      prevTasks.map((task) =>
@@ -161,7 +193,7 @@ const filteredTasks = tasksList.filter((task) => {
             <h3 className="text-lg font-bold text-gray-900 mb-4">
               Add Task
             </h3>
-            <form>
+            <form onSubmit={addTask}>
               <div className="mb-4">
                 <label className="block text-sm font-medium text-gray-700 mb-1">
                   Task Name
@@ -196,7 +228,7 @@ const filteredTasks = tasksList.filter((task) => {
                 >
                   <option value="Development">Development</option>
                   <option value="Design">Design</option>
-                  <option value="Research">Marketing</option>
+                  <option value="Marketing">Marketing</option>
                 </select>
               </div>
               <div className="mb-4">
