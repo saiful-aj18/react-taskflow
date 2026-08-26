@@ -165,7 +165,7 @@ const filteredTasks = tasksList.filter((task) => {
             </select>
           <button 
           onClick={() => setShowModal(true)}
-          className="rounded-lg bg-blue-600 px-4 py-2 text-sm font-semibold text-white transition hover:bg-blue-700">
+          className="rounded-lg bg-cyan-600 px-4 py-2 text-sm font-semibold text-white transition hover:bg-cyan-700">
             + Add Task
           </button>
           
