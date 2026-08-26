@@ -104,7 +104,7 @@ const filteredTasks = tasksList.filter((task) =>
             My Tasks
           </h2>
           <input
-          className="w-full rounded-lg border border-gray-300 px-4 py-2 text-sm text-gray-900 focus:border-blue-500 focus:ring focus:ring-blue-200 sm:w-auto"
+          className="w-full rounded-lg border border-gray-300 px-2 py-2 text-sm text-gray-900 focus:border-blue-500 focus:ring focus:ring-blue-200 sm:w-auto"
           type="text"
           placeholder="Search tasks..."
           value={search}
@@ -113,7 +113,6 @@ const filteredTasks = tasksList.filter((task) =>
             + Add Task
           </button>
           
-
         </div>
         <div className="overflow-hidden rounded-xl border bg-white shadow-sm">
           {
